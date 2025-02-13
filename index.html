@@ -1,0 +1,701 @@
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" /> 
+<meta content="width=device-width, initial-scale=1.0" name="viewport" /> 
+<link crossorigin="anonymous" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" /> 
+<script crossorigin="anonymous" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" src="https://code.jquery.com/jquery-3.6.0.min.js">
+</script>
+<script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> <script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> <title>[SRI] Requerimentos</title> <link href="https://i.imgur.com/lX6vuMH.gif" rel="icon" />        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" /> <style>
+	body {
+		background: linear-gradient(270deg, #2c2619, #15130c, rgb(0, 0, 0));
+		background-size: 400% 400%;
+		font-family: "Poppins", sans-serif;
+		font-size: 10px;
+		animation: Gradient 8s ease infinite;
+	}
+
+	@keyframes Gradient {
+		0%, 100% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+	}
+
+	form {
+		background: rgb(230, 230, 230);
+		padding: 1em 5em;
+		margin: 30% auto;
+		box-shadow: 0 0 100em rgba(100, 100, 100, 0.5);
+		border-radius: 50px;
+		border: 3px solid #000;
+		width: 150%;
+		position: relative; /* Adiciona posicionamento relativo para permitir ajuste do 'left' */
+		left: -25%; /* Move o formulário para a esquerda, centralizando-o horizontalmente */
+		animation: pulse 3.0s infinite alternate;
+		will-change: transform;
+	}
+
+    ::-webkit-scrollbar {
+            width: 12px;
+        }
+    
+        ::-webkit-scrollbar-thumb {
+        background: #2c2619;
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #2c2619;
+      }
+
+      body {
+        scrollbar-width: thin;
+        scrollbar-color: #2c2619 #17140d;
+      }
+
+	.container {
+		text-align: center;
+	}
+
+	@keyframes pulse {
+		0% { transform: scale(1); }
+		100% { transform: scale(1.02); }
+	}
+
+	h1 {
+		font-size: 2rem;
+	}
+
+	p {
+		margin: 0 0 0em 0;
+		position: relative;
+	}
+
+	label {
+		display: block;
+		font-size: 1.5em;
+		text-align: center;
+		/* padding-bottom: 20px; */
+		margin:  1em;
+		color: #000;
+	}
+
+	/* Novos estilos */
+	.form-check-label {
+		display: block;
+		margin-left: 1.5em; /* Ajuste conforme necessário para o alinhamento desejado */
+		text-align: left;
+		font-size: 0.8rem;
+	}
+
+	.form-check-input {
+		width: 1.2em;  /* Aumentar o tamanho do checkbox para facilitar a interação */
+		height: 1.2em; /* Aumentar o tamanho do checkbox para facilitar a interação */
+		margin-top: 0.3em;
+		margin-left: -1.5em; /* Deslocar o checkbox para a esquerda */
+		position: absolute; /* Usar posição absoluta para tirar o elemento do fluxo normal */
+	}
+
+	.form-check {
+		position: relative; /* Definir posição relativa para conter absolutos internos */
+		padding-left: 2em;  /* Espaço para o checkbox */
+		margin-bottom: 1em; /* Espaço abaixo do checkbox */
+		display: flex;      /* Usar flexbox para alinhamento */
+		align-items: center; /* Centralizar itens verticalmente */
+	}
+
+	.textVoltar {
+		font-size: 1.6em;
+	}
+
+	input {
+		display: block;
+		box-sizing: border-box;
+		width: 100%;
+		outline: none
+	}
+
+	input[type="text"], input[type="number"], input[type="date"], select {
+		background: #f5f5f5;
+		border: 1px solid #e5e5e5;
+		font-size: 1.6em;
+		padding: 0.8em 0.5em;
+		border-radius: 5px;
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	input[type="text"]:focus,
+	input[type="number"]:focus,
+	input[type="date"]:focus {
+		background: #fff
+	}
+
+	.right, .left {
+		display: block;
+		background: #100101;
+		color: #fff;
+		padding: 7px 10px;
+		position: absolute;
+		font-size: 1.3em;
+		border-radius: 5px;
+	}
+
+	.right {
+		left: 105%;
+		top: 25px;
+		width: 15rem;
+		margin-top: 2.5%;
+	}
+
+	.left {
+		left: -60%;
+		top: 18px;
+		width: 200px;
+	}
+
+	.left:after,
+	.right:after {
+		border: solid transparent;
+		content: "";
+		height: 0;
+		width: 0;
+		position: absolute;
+		top: 50%;
+		pointer-events: none;
+		border-color: rgba(136, 183, 213, 0);
+		border-width: 8px;
+		margin-top: -8px;
+	}
+
+	.right:after {
+		right: 100%;
+		border-right-color: #2c2619;
+	}
+
+	.left:after {
+		left: 100%;
+		border-left-color: #2c2619;
+	}
+
+	input[type="submit"], input[type="button"] {
+		background: #2c2619;
+		color: #fff;
+		font-size: 2em;
+		padding: 0.8em 0;
+		border-radius: 5px;
+		border: none;
+		cursor: pointer;
+		display: block;
+		margin: 2em 0 0;
+		width: 100%;
+	}
+
+	select {
+		display: block;
+		box-sizing: border-box;
+		width: 100%;
+		outline: none;
+		background: #f5f5f5;
+		border: 1px solid #e5e5e5;
+		font-size: 1.6em;
+		/* text-align: center; */
+		padding: .8em .5em;
+		border-radius: 5px;
+	}
+
+	img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: -80px;
+		padding-bottom: 20px;
+	}
+
+	.btnVoltar, .btnVoltar:hover {
+		display: block;
+		/* margin-top: 50px; */
+		padding-bottom: 20px;
+		color: #2c2619;
+		text-align: right;
+	}
+
+	.v-center {
+		display: flex;
+		align-items: center;
+	}
+
+	.icon,
+	.text {
+		vertical-align: middle;
+		display: inline-block;
+	}
+
+	.chkbox {
+		padding-left: 10px;
+		font-weight: bold;
+	}
+</style> 
+<!--   Campo onde fica o template da mensagem. De exemplo, fica o primeiro formulário   --> <textarea id="fa-generated-message" style="display:none">        
+[b]ENTRADA NO SETOR[/b]
+[b]Nick:[/b] {field0}
+[b]Setor:[/b] {field28}
+<!-- [b]Data de entrada:[/b] {field2} -->
+[b]{field1}[/b]
+
+</textarea> <div class="container d-flex justify-content-center">
+<img style="width: 30%; height: auto; display: block; margin-top: 2%; margin-bottom: 2%" alt="Imagem Decorativa" src="https://i.imgur.com/Gy9xKeG.png" /> 
+</div><div class="container d-flex justify-content-center"><div id="formPrincipal" class="col-lg-6 col-md-8 col-sm-12">
+ 
+<form>
+	 <img alt="Logo" src="https://i.imgur.com/iN6XoQJ.png" /> 
+	<h1 style="text-align: center; padding-bottom: 20px;">
+		Bem-vindo, membro!
+	</h1>
+	 
+	<p>
+		 <label for="opcoesIniciais">Por favor, selecione o tipo de requerimento desejado.</label> <select id="opcoesIniciais" name="opcoesIniciais">
+					<option value="1">Entrada de Membros</option>
+					<option value="2">Reintegração de Membros</option>
+					<option value="3">Saída de Membros</option>
+					<option value="4">Expulsão de Membros</option>
+					<option value="5">Pedido de Licença/Reserva</option>
+					<option value="6">Retorno de Licença/Reserva</option>
+					<option value="7">Promoção de Membros</option>
+					<option value="8">Alteração de Nickname</option>
+				</select> 
+	</p>
+	 
+	<p>
+		<input type="button" value="Avançar" id="selecaoDeFormulario" />
+	</p>
+	 
+	 
+</form>
+ 
+</div>
+
+<!--  1- Entrada no setor  --> <div id="form1" class="col-lg-6 col-md-8 col-sm-12" style="display: none;">
+ 
+<form>
+	 <img alt="Logo" src="https://i.imgur.com/iN6XoQJ.png" /> <a class="btnVoltar" href="javascript:window.location.reload(true)"> <span class="text textVoltar">« Voltar.</span> </a> 
+	<h1 style="text-align: center; padding-bottom: 20px;">
+		Entrada no Subgrupo
+	</h1>
+	 
+	<p>
+		 <label for="field0">Nickname:</label> <input required="" id="field0" name="nick" placeholder="Ex: Nirvac" type="text" /> <span class="right">Informe o nickname do novo membro.</span> 
+	</p>
+
+    <p> <label for="field28">Setor:</label> <select id="field28">
+        <option value="">Selecione o setor</option>
+        <option value="Agente de Fiscalização">Agente de Fiscalização</option>
+    </select>
+	<span class="right">Informe o setor do novo membro.</span> 
+    </p>
+	  
+	<p>
+		 <input type="submit" value="Enviar" name="post" /> 
+	</p>
+	 
+	
+	 
+</form>
+ 
+</div>
+
+<!--  2. Reintregação de Membros  --> <div id="form2" class="col-lg-6 col-md-8 col-sm-12" style="display: none;">
+ 
+<form>
+	 <img alt="Logo" src="https://i.imgur.com/iN6XoQJ.png" /> <a class="btnVoltar" href="javascript:window.location.reload(true)"> <span class="text textVoltar">« Voltar.</span> </a> 
+	<h1 style="text-align: center; padding-bottom: 20px;">
+		Reintegração de Membros
+	</h1>
+	 
+	<p>
+		 <label for="field3">Nickname:</label> <input required="" id="field3" name="nick" placeholder="Ex: y0loo" type="text" /> <span class="right">Indique o nickname do membro que será reintegrado.</span> 
+	</p>
+	 
+	<p>
+		 <label for="field4">Permissão:</label> <input required="" id="field4" name="permissão" placeholder="Ex: graia1" type="text" /> <span class="right">Nickname do membro da liderança responsável pela reintegração.</span> 
+	</p>
+	 
+ 
+	<p>
+		 <input type="submit" value="Enviar" name="post" /> 
+	</p>
+	 
+	
+	 
+</form>
+ 
+</div>
+
+<!--  3. Saída de Membros  --> <div id="form3" class="col-lg-6 col-md-8 col-sm-12" style="display: none;">
+ 
+<form>
+	 <img alt="Logo" src="https://i.imgur.com/iN6XoQJ.png" /> <a class="btnVoltar" href="javascript:window.location.reload(true)"> <span class="text textVoltar">« Voltar.</span> </a> 
+	<h1 style="text-align: center; padding-bottom: 20px;">
+		Saída de Membros
+	</h1>
+	 
+	<p>
+		 <label for="field5">Nickname:</label> <input required="" id="field5" name="nick" placeholder="Ex: Nirvac" type="text" /> <span class="right">Indique o nickname do ex-membro.</span> 
+	</p>
+	 
+	<p>
+		 <label for="field6">Motivo:</label> <input required="" id="field6" name="motivoSaida" placeholder="Ex: Desanimado de jogar habbo" type="text" /> <span class="right">Descreva o motivo da saída.</span> 
+	</p>
+	 
+	<p>
+		 <label for="field7">Permissão:</label> <input required="" id="field7" name="permissao" placeholder="Ex: Joao:Roberto" type="text" /> <span class="right">Nickname do membro da liderança que permitiu a saída.</span> 
+	</p>
+	 
+	<p>
+		 <input type="submit" value="Enviar" name="post" /> 
+	</p>
+	 
+	
+	 
+</form>
+ 
+</div>
+
+<!--  4. Expulsão de Membros  --> <div id="form4" class="col-lg-6 col-md-8 col-sm-12" style="display: none;">
+ 
+<form>
+	 <img alt="Logo" src="https://i.imgur.com/iN6XoQJ.png" /> <a class="btnVoltar" href="javascript:window.location.reload(true)"> <span class="text textVoltar">« Voltar.</span> </a> 
+	<h1 style="text-align: center; padding-bottom: 20px;">
+		Expulsão de Membros
+	</h1>
+	 
+	<p>
+		 <label for="field9">Nickname:</label> <input required="" id="field9" name="nick" placeholder="Ex: ???JUKA" type="text" /> <span class="right">Indique o nickname do membro expulso.</span> 
+	</p>
+	 
+	<p>
+		 <label for="field10">Motivo da Expulsão:</label> <input required="" id="field10" name="motivoExpulsao" placeholder="Ex: Acúmulo de advertências escritas" type="text" /> <span class="right">Descreva o motivo da expulsão.</span> 
+	</p>
+	 
+	<p>
+		 <label for="field11">Autorização:</label> <input required="" id="field11" name="autorizacao" placeholder="Ex: Qox" type="text" /> <span class="right">Nickname do membro da liderança que autorizou a expulsão.</span> 
+	</p>
+	 
+	<p>
+		 <input type="submit" value="Enviar" name="post" /> 
+	</p>
+	 
+	
+	 
+</form>
+ 
+</div>
+
+<!--  5. Pedido de Licença / Reserva  --> <div id="form5" class="col-lg-6 col-md-8 col-sm-12" style="display: none;">
+ 
+<form action="https://policiarcc.com/post">
+	 <img alt="Logo" src="https://i.imgur.com/iN6XoQJ.png" /> <a class="btnVoltar" href="javascript:window.location.reload(true)"> <span class="text textVoltar">« Voltar.</span> </a> 
+	<h1 style="text-align: center; padding-bottom: 20px;">
+		Pedido de Licença / Reserva
+	</h1>
+	 
+	<p>
+		<label for="field12">Nickname:</label> <input required="" id="field12" name="nick" type="text" placeholder="Ex: Saturno" /> <span class="right">Digite o nickname do membro que está colocando licença/reserva.</span> 
+	</p>
+	 
+	<p>
+		 <label for="field13">Período da Licença/Reserva:</label> <input required="" id="field13" name="periodo" type="number" min="7" max="120" value="7" /> <span class="right">Indique a duração da licença/reserva.</span> 
+	</p>
+	 
+	<p>
+		 <label for="field14">Permissão:</label> <input required="" id="field14" name="permissao" placeholder="Ex: graia1" type="text" /> <span class="right">Indique o nickname do membro da liderança que permitiu e está ciente da licença/reserva.</span> 
+	</p>
+	 
+	<p>
+		 <input required="" id="checkbox_form6" class="form-check-input" type="checkbox" /> <label class="form-check-label" for="checkbox_form6"> Li e concordo com as normas de licença/reserva. Assim, comprometo-me a postar o retorno dentro do prazo estipulado, em até 24 horas após o término do período. Estou ciente de que a não realização da postagem pode resultar na minha expulsão do departamento interno. </label> 
+	</p>
+	 
+	<p>
+		 <input type="submit" value="Enviar" name="post" /> 
+	</p>
+	 
+	
+	 
+</form>
+ 
+</div>
+
+<!--  6. Retorno de Licença/Reserva  --> <div id="form6" class="col-lg-6 col-md-8 col-sm-12" style="display: none;">
+ 
+<form action="https://policiarcc.com/post">
+	 <img alt="Logo" src="https://i.imgur.com/iN6XoQJ.png" /> <a class="btnVoltar" href="javascript:window.location.reload(true)"> <span class="text textVoltar">« Voltar.</span> </a> 
+	<h1 style="text-align: center; padding-bottom: 20px;">
+		Retorno de Licença/Reserva
+	</h1>
+	 
+	<p>
+		 <label for="field9">Nick</label> <input required="" id="field17" name="nick" placeholder="Ex: y0loo" type="text" /> <span class="right">Indique o nickname do membro que está retornando de licença/reserva.</span> 
+	</p>
+	 
+	<p>
+		 <input type="submit" value="Enviar" name="post" /> 
+	</p>
+	 
+	
+	 
+</form>
+ 
+</div>
+
+<!--  7. Promoção/Rebaixamento de Membros --> <div id="form7" class="col-lg-6 col-md-8 col-sm-12" style="display: none;">
+ 
+<form action="https://policiarcc.com/post">
+	 <img alt="Logo" src="https://i.imgur.com/iN6XoQJ.png" /> <a class="btnVoltar" href="javascript:window.location.reload(true)"> <span class="text textVoltar">« Voltar.</span> </a> 
+	<h1 style="text-align: center; padding-bottom: 20px;">
+		Promoção/Rebaixamento de Membros
+	</h1>
+	 
+	<p>
+		 <label for="field18">Nickname:</label> <input required="" id="field18" name="nick" placeholder="Ex: Ramos" type="text" /> <span class="right">Indique o nickname do membro promovido/rebaixado.</span> 
+	</p>
+	 
+	<p>
+		 <label for="field19">Cargo Atual:</label> <select id="field19">
+					<option value="">Selecione o cargo atual</option>
+					<option value="Agente de Fiscalização">Agente de Fiscalização</option>
+					<option value="Agente de Inspeção">Agente de Inspeção</option>
+					<option value="Subcomandante">Subcomandante</option>
+					<option value="Comandante">Comandante</option>
+				</select> <span class="right">Selecione o cargo atual do membro</span> 
+	</p>
+
+    <p>
+        <label for="field27">Setor:</label> <select id="field27">
+            <option value="">Selecione o setor</option>
+            <option value="Agente de Fiscalização">Agente de Fiscalização</option>
+            <option value="Agente de Inspeção">Agente de Inspeção</option>
+            <option value="Subcomandante">Subcomandante</option>
+            <option value="Comandante">Comandante</option> <span class="right">Informe o setor do membro.</span> 
+        </select>
+    </p>
+	 
+	<p>
+		 <label for="field20">Novo Cargo:</label> <select id="field20">
+					<option value="">Selecione o novo cargo</option>
+					<option value="Agente de Fiscalização">Agente de Fiscalização</option>
+					<option value="Agente de Inspeção">Agente de Inspeção</option>
+					<option value="Subcomandante">Subcomandante</option>
+					<option value="Comandante">Comandante</option>
+				</select> <span class="right">Selecione o novo cargo do membro após promoção/rebaixamento</span> 
+	</p>
+	 
+	<p>
+		 <label for="field21">Motivo:</label> <input value="Avaliação da liderança do departamento interno." required="" id="field21" name="motivo" type="text" /> <span class="right">Indique os motivos para a promoção/rebaixamento do membro.</span> 
+	</p>
+	 
+	<p>
+		 <input type="submit" value="Enviar" name="post" /> 
+	</p>
+	 
+	
+	 
+</form>
+ 
+</div>
+
+<!--  8. Alteração de Nickname  --> <div id="form8" class="col-lg-6 col-md-8 col-sm-12" style="display: none;">
+ 
+<form action="https://policiarcc.com/post">
+	 <img alt="Logo" src="https://i.imgur.com/iN6XoQJ.png" /> <a class="btnVoltar" href="javascript:window.location.reload(true)"> <span class="text textVoltar">« Voltar.</span> </a> 
+	<h1 style="text-align: center; padding-bottom: 20px;">
+		Alteração de Nickname
+	</h1>
+	 
+	<p>
+		 <label for="field23">Nickname na Listagem:</label> <input required="" id="field23" name="nick_antigo" type="text" /> <span style="margin-top: 1.5%;" class="right">Indique o nickname que se encontra na listagem de membros (nickname antigo).</span> 
+	</p>
+	 
+	<p>
+		 <label for="field24">Novo Nickname:</label> <input required="" id="field24" name="novo_nick" type="text" /> <span style="margin-top: 1.5%;" class="right">Indique o nickname pelo qual o antigo deverá ser substituído na listagem de membros (nickname novo).</span> 
+	</p>
+	 
+	<p>
+		 <input type="submit" value="Enviar" name="post" /> 
+	</p>
+	 
+	
+	 
+</form>
+ 
+</div>
+
+</div>
+<script>
+		$(function() {
+
+			// pegaDataAtual();
+
+			// function pegaDataAtual() {
+			// 	document.getElementById("field2").value = formataData2(new Date(Date.now()));
+			// }
+
+			function formataData2(data) {
+				return ("0" + data.getDate()).slice(-2) + "/" + ("0" + (data.getMonth() + 1)).slice(-2) + "/" + data.getFullYear()
+			}
+
+				/**
+				 * Posta o form
+				 */
+				$('form').on('submit', function (e) {
+					e.preventDefault();
+
+					//substitui field0, field1 pelos valores corretos
+					format_fields();
+						$.post('/post', {
+							t: 37808,
+							message: $('#fa-generated-message').val().trim(),
+							mode: 'reply',
+							tid: $('[name="tid"]:first').val(),
+							post: 1,
+						}).done(function () {
+							location.href = 'http://' + location.host + '/t37808-?view=newest';
+						}).fail(function () {
+							alert('Houve um erro! Tente novamente!');
+						});
+				});
+
+				/**
+				 * Método para alterar o template da mensagem que é enviada ao fórum. É acionado quando a pessoa seleciona um modelo.
+				 */
+				function alteraTemplateMensagem(opcaoEscolhida) {
+					var texto;
+					switch (opcaoEscolhida) {
+						case "1":
+							texto =
+								"[font=Poppins][size=18][center][color=#2c2619][b]ENTRADA NO SETOR[/b][/color][/center][/size]\n\n" +
+								"[b]Nick(s):[/b] {field0}[/font]\n" +
+								"[b]Setor:[/b] {field28}\n" //
+								// "&#10149; [b]{field1}[/b]";
+							break;
+				  //      case "2":
+					//        texto =
+					 //           "[size=18][center][color=#2c2619][b]GRADUAÇÃO[/b][/color][/center][/size]\n\n" +
+					 //           "[b]Nick(s) do(s) aprovado(s):[/b] {field3}\n";
+					  //      break;
+						case "5":
+							texto =
+								"[font=Poppins][size=18][center][color=#2c2619][b]PEDIDO DE LICENÇA / RESERVA[/b][/color][/center][/size]\n\n" +
+								"[b]Nick:[/b] {field12} \n" +
+								"[b]Período da Licença / Reserva:[/b] {field13} dias\n" +
+								"[b]Permissão:[/b] {field14}\n\n" +
+								"&#10149; Li e concordo com as normas de licença/reserva. Sendo assim, me responsabilizo em postar o retorno no final do prazo em até 24 horas. Estarei passível de ser expulso do setor, caso não for realizado a postagem.[/font]";
+							break;
+						case "6":
+							texto =
+								"[font=Poppins][size=18][center][color=#2c2619][b]RETORNO DE LICENÇA / RESERVA[/b][/color][/center][/size]\n\n" +
+								"[b]Nick:[/b] {field17}\n" +
+								"&#10149; Estou retornando de minha licença / reserva.[/font]";
+							break;
+						case "7":
+							texto =
+								"[font=Poppins][size=18][center][color=#2c2619][b]PROMOÇÃO/REBAIXAMENTO[/b][/color][/center][/size]\n\n" +
+								"[b]Nick:[/b] {field18}\n" +
+								"[b]Cargo atual:[/b] {field19}\n" +
+								"[b]Novo cargo:[/b] {field20}\n" +
+                                "[b]Setor:[/b] {field27}\n" +
+								"[b]Motivo:[/b] {field21}[/font]";
+							break;
+				   //     case "6":
+					 //       texto =
+					   //         "[size=18][center][color=#2c2619][b]ADVERTÊNCIA INTERNA[/b][/color][/center][/size]\n\n" +
+						 //       "[b]Nick:[/b] {field14}\n" +
+						   //     "[b]Término:[/b] {field15}\n" +
+							 //   "[b]Motivo:[/b] {field16}";
+					  //      break;
+						case "3":
+							texto =
+								"[font=Poppins][size=18][center][color=#2c2619][b]SAÍDA DO SETOR[/b][/color][/center][/size]\n\n" +
+								"[b]Nick:[/b] {field5}\n" +
+								"[b]Motivo:[/b] {field6}\n" +
+								"[b]Permissão:[/b] {field7}\n\n" +
+								"&#10149; Eu estou saindo com permissão da liderança.[/font]";
+							break;
+						case "4":
+							texto =
+								"[font=Poppins][size=18][center][color=#2c2619][b]EXPULSÃO DO SETOR[/b][/color][/center][/size]\n\n" +
+								"[b]Nick:[/b] {field9}\n" +
+								"[b]Motivo:[/b] {field10}\n" +
+								"[b]Autorização:[/b] {field11}[/font]";
+							break;
+						case "8":
+							texto =
+								"[font=Poppins][size=18][center][color=#2c2619][b]ALTERAÇÃO DE NICK[/b][/color][/center][/size]\n\n" +
+								"[b]Nick na listagem:[/b] {field23}\n" +
+								"[b]Novo nick:[/b] {field24}[/font]";
+							break;
+						case "2":
+							texto =
+								"[font=Poppins][size=18][center][color=#2c2619][b]REINTEGRAÇÃO DE MEMBROS[/b][/color][/center][/size]\n\n" +
+								"[b]Nick:[/b] {field3}\n" +
+								// "[b]Teve um mês ou mais no setor:[/b] {field26}\n" +
+								"[b]Permissão:[/b] {field4}[/font]\n"
+							break;
+						default:
+							break;
+					}
+
+					$("#fa-generated-message").html(texto);
+
+				}
+
+				$("#dataTermino").change(function () {
+					$("#field15").val(formataData(new Date($("#dataTermino").val())));
+				})
+
+				//mostra o formulario escolhido
+				$("#selecaoDeFormulario").click(function () {
+					alteraTemplateMensagem($('#opcoesIniciais').val());
+
+					$("#formPrincipal").fadeOut(function () {
+						$("#form" + $('#opcoesIniciais').val()).fadeIn();
+					});
+				})
+
+				//PARTE DE SUBSTITUIR OS VALORES
+				list_elements_parse = '';
+				list_elements_number = '';
+				mode = 0;
+
+				function format_fields() {
+					$('*[template]').each(function () {
+						formated = jQuery(this).attr('template').replace(/{field([0-9]+)}/gi, function (exp, i) {
+							return field_value(i)
+						});
+						jQuery(this).val(formated)
+					});
+					jQuery('#fa-generated-message').html(jQuery('#fa-generated-message').html().replace(/{field([0-9]+)}/gi, function (exp, i) {
+						return field_value(i)
+					}));
+					return true
+				}
+
+				function field_value(field_id) {
+					field = jQuery('#field' + field_id);
+					if (jQuery('#field' + field_id)[0].nodeName == 'SELECT') {
+						return field.find(":selected").text();
+					} else {
+						return field.val()
+					}
+				}
+				jQuery(function () {
+					jQuery('dl[title]').removeAttr('title')
+				});
+			});
+</script> <script>
+		//por algum motivo o seletor de data tá devolvendo com 01 dia a menos, por isso tem que deixar 31 dias
+		function formataData(data) {
+		data = data.addDays(31)
+		return ("0" + data.getDate()).slice(-2) + "/" + ("0" + (data.getMonth() + 1)).slice(-2) + "/" + data.getFullYear()
+	}
+	
+</script>
